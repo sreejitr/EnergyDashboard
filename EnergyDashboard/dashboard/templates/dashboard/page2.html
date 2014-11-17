@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="{% static 'dashboard/js/page2_graph1.js' %}"></script>
+<script src="{% static 'dashboard/js/page2_graph2.js' %}"></script>
+<script src="{% static 'dashboard/js/page2_graph3.js' %}"></script>
+<script src="{% static 'dashboard/js/page2_graph4.js' %}"></script>
+<div class="col col-lg-12" style="margin-top: 2em;">
+
+	<div id="graph-container1"></div>
+	<div id="graph-container2"></div>
+	<div id="graph-container3">
+		<div id="graph3"></div>
+		<h1 style="text-align: center;">Some Metric</h1>
+		<h2 style="text-align: center;">Value: 300</h2>
+	</div>
+	<div id="graph-container4"></div>
+	<div id="graph-container5"></div>
+</div>
+
+{% endblock %}
