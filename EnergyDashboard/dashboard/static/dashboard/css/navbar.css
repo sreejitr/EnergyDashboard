@@ -4,7 +4,7 @@ html {
 }
 body {
   color: #2a2a2b;
-  background-color: #2a2a2b;
+  background-color: #000000;
 }
 
 /*.navbar-wrapper {
@@ -155,17 +155,17 @@ p.thick {
 
 
 #graph-container1 {
-  margin-top: 12em;
+  /*margin-top: 1em;*/
   margin-left: 10px;
   float: left;
-  min-height: 450px;
-  min-width: 456px;
-  max-width: 456px;
+  min-height: 650px;
+  min-width: 450px;
+  max-width: 450px;
   border-style: solid;
-  border-color: #ffffff;
+  border-color: #000000;
   box-shadow: 9px 9px 20px #787878;
   border-width: 3px;
-  background-color: #ffffff;
+  background-color: #000000;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -173,17 +173,17 @@ p.thick {
 }
 
 #graph-container2 {
-  margin-top: 12em;
+  /*margin-top: 1em;*/
   margin-left: 10px;
   float: left;
-  min-height: 450px;
+  min-height: 650px;
   min-width: 920px;
   max-width: 920px;
   border-style: solid;
-  border-color: #ffffff;
+  border-color: #000000;
   box-shadow: 9px 9px 20px #787878;
   border-width: 3px;
-  background-color: #ffffff;
+  background-color: #000000;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -210,18 +210,19 @@ p.thick {
 }
 
 #graph-container4 {
-  margin-top: 1em;
+  /*margin-top: 1em;*/
+  color: #FFFFFF;
   margin-bottom: 2em;
   margin-left: 10px;
   float: left;
-  min-height: 400px;
-  min-width: 400px;
-  max-width: 400px;
+  min-height: 650px;
+  min-width: 450px;
+  max-width: 450px;
   border-style: solid;
-  border-color: #ffffff;
+  border-color: #000000;
   box-shadow: 9px 9px 20px #787878;
   border-width: 3px;
-  background-color: #ffffff;
+  background-color: #000000;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;

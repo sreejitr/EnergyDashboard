@@ -56,7 +56,7 @@ $(function () {
     };
 
     // The speed gauge
-    $('#graph-container4').highcharts(Highcharts.merge(gaugeOptions, {
+    $('#graph4').highcharts(Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
             max: 200,
@@ -84,35 +84,35 @@ $(function () {
 
     }));
 
-    // The RPM gauge
-    $('#graph-container5').highcharts(Highcharts.merge(gaugeOptions, {
-        yAxis: {
-            min: 0,
-            max: 5,
-            title: {
-                text: 'RPM'
-            }
-        },
+    // // The RPM gauge
+    // $('#graph-container5').highcharts(Highcharts.merge(gaugeOptions, {
+    //     yAxis: {
+    //         min: 0,
+    //         max: 5,
+    //         title: {
+    //             text: 'RPM'
+    //         }
+    //     },
 
-        series: [{
-            name: 'RPM',
-            data: [1],
-            dataLabels: {
-                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">* 1000 / min</span></div>'
-            },
-            tooltip: {
-                valueSuffix: ' revolutions/min'
-            }
-        }]
+    //     series: [{
+    //         name: 'RPM',
+    //         data: [1],
+    //         dataLabels: {
+    //             format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+    //                 ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
+    //                    '<span style="font-size:12px;color:silver">* 1000 / min</span></div>'
+    //         },
+    //         tooltip: {
+    //             valueSuffix: ' revolutions/min'
+    //         }
+    //     }]
 
-    }));
+    // }));
 
     // Bring life to the dials
     setInterval(function () {
         // Speed
-        var chart = $('#graph-container4').highcharts(),
+        var chart = $('#graph4').highcharts(),
             point,
             newVal,
             inc;
@@ -129,19 +129,19 @@ $(function () {
             point.update(newVal);
         }
 
-        // RPM
-        chart = $('#graph-container5').highcharts();
-        if (chart) {
-            point = chart.series[0].points[0];
-            inc = Math.random() - 0.5;
-            newVal = point.y + inc;
+        // // RPM
+        // chart = $('#graph-container5').highcharts();
+        // if (chart) {
+        //     point = chart.series[0].points[0];
+        //     inc = Math.random() - 0.5;
+        //     newVal = point.y + inc;
 
-            if (newVal < 0 || newVal > 5) {
-                newVal = point.y - inc;
-            }
+        //     if (newVal < 0 || newVal > 5) {
+        //         newVal = point.y - inc;
+        //     }
 
-            point.update(newVal);
-        }
+        //     point.update(newVal);
+        // }
     }, 2000);
 
 
