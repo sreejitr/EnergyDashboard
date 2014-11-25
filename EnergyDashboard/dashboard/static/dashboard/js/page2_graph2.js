@@ -4,7 +4,7 @@ $(function () {
             zoomType: 'xy'
         },
         title: {
-            text: 'Average Monthly Cost based on Consumption'
+            text: 'Average Consumption and Workstation X\'s Consumption'
         },
         xAxis: [{
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -18,20 +18,20 @@ $(function () {
                 }
             },
             title: {
-                text: 'Cost in dollars',
+                text: 'Average Cost of Consumption',
                 style: {
                     color: Highcharts.getOptions().colors[1]
                 }
             }
         }, { // Secondary yAxis
             title: {
-                text: 'Average Consumption',
+                text: 'Work Station X\'s Consumption',
                 style: {
                     color: Highcharts.getOptions().colors[0]
                 }
             },
             labels: {
-                format: '{value} kwh',
+                format: '{value} Watt hour',
                 style: {
                     color: Highcharts.getOptions().colors[0]
                 }
@@ -51,20 +51,20 @@ $(function () {
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
         },
         series: [{
-            name: 'Average Consumption',
+            name: 'Workstation X\'s Consumption',
             type: 'column',
             yAxis: 1,
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 146.4, 194.1, 95.6, 54.4],
             tooltip: {
-                valueSuffix: ' kwh'
+                valueSuffix: ' Watt hour'
             }
 
         }, {
-            name: 'Cost',
+            name: 'Average Consumption of 182 worstations',
             type: 'spline',
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+            data: [47.0, 69.9, 90.5, 94.5, 180.2, 210.5, 205.2, 126.5, 213.3, 218.3, 103.9, 59.6],
             tooltip: {
-                valueSuffix: ' dollars'
+                valueSuffix: ' Watt hour'
             }
         }]
     });

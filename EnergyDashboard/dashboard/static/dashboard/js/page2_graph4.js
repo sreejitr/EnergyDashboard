@@ -59,9 +59,9 @@ $(function () {
     $('#graph4').highcharts(Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
-            max: 200,
+            max: 100,
             title: {
-                text: 'Speed'
+                text: 'Percentage Consumption'
             }
         },
 
@@ -71,14 +71,14 @@ $(function () {
 
         series: [{
             name: 'Speed',
-            data: [80],
+            data: [40],
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">km/h</span></div>'
+                       '<span style="font-size:12px;color:silver">Percentage</span></div>'
             },
             tooltip: {
-                valueSuffix: ' km/h'
+                valueSuffix: ' %'
             }
         }]
 
@@ -119,10 +119,10 @@ $(function () {
 
         if (chart) {
             point = chart.series[0].points[0];
-            inc = Math.round((Math.random() - 0.5) * 100);
+            inc = Math.round((Math.random() - 0.5) * 5);
             newVal = point.y + inc;
 
-            if (newVal < 0 || newVal > 200) {
+            if (newVal < 0 || newVal > 100) {
                 newVal = point.y - inc;
             }
 
