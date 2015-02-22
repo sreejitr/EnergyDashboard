@@ -1,28 +1,132 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
+<!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+<!-- <script src="http://code.highcharts.com/modules/exporting.js"></script> -->
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
-<script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+<!-- <script src="http://code.highcharts.com/modules/solid-gauge.js"></script> -->
 <script src="{% static 'dashboard/js/page2_graph1.js' %}"></script>
 <script src="{% static 'dashboard/js/page2_graph2.js' %}"></script>
 <script src="{% static 'dashboard/js/page2_graph3.js' %}"></script>
 <script src="{% static 'dashboard/js/page2_graph4.js' %}"></script>
-<div class="col col-lg-12" style="padding-top: 3em;">
+<script src="{% static 'dashboard/js/graph5.js' %}"></script>
+<script src="{% static 'dashboard/js/pie.js' %}"></script>
+<script src="{% static 'dashboard/js/energyconsumptionInst.js' %}"></script>
+<script src="{% static 'dashboard/js/bargraph.js' %}"></script>
+<div style="padding-top: 1em; padding-bottom: 1em;">
 
 	<!-- <div id="graph-container1"></div> -->
-<div id="graph-container2"></div>
+<!--div id="graph-container2"></div-->
 	<!--div id="graph-container3">
 		<div id="graph3"></div>
 		<h1 style="text-align: center;">Some Metric</h1>
 		<h2 style="text-align: center;">Value: 300</h2>
 	</div-->
-<div id="graph-container4">
+<!--div id="graph-container4">
 		<h2 style="text-align: center;">WS 'X' Consumption Percentage w.r.t Room</h2>
 		<h2 style="text-align: center;">Instantaneous Variation</h2>
 	<div id="graph4" style="height: 30em;">
 	</div>
+</div-->
+<!-- <table style="margin: 0px auto;">
+	<tr>
+		<td style="width:755px;"><div id="graph-container7"></div></td>
+		<td><div id="graph-container5"></div></td>
+	</tr>
+	<tr>
+		<td><div id="graph-container8"></div></td>
+		<td><div id="graph-container6"></div></td>
+
+	</tr>
+
+</table> -->
 </div>
-	<!-- <div id="graph-container5"></div> -->
+<div class="column">
+    <div class="band">
+    	<p style="padding-left: 1.0em; font-size: 1.5em; font-family:'UNICA ONE', sans-serif; font-weight: bold;"> BAND: RED <span style="display:block; float:right; width:9em; ">TODAY'S SCORE: 690</span></p>
+    </div>
 </div>
+<div class="column">
+    <div class="container span2"> 
+    	<div id="graph-container7"></div>
+    	<div class="btn-group pull-right" id="timeperiod">
+      		<button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="onedaykwh">Today </button>
+      		<button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="oneweekkwh">Last Week </button>
+      		<button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="allkwh">All </button>
+    	</div>
+    	
+    </div>
+    <div class="container span2"> 
+    	<div id="graph-container8"></div>
+    	<div class="btn-group pull-right" id="timeperiod">
+      		<button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="onedayile">Today </button>
+      		<button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="oneweekile">Last Week </button>
+      		<button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="allile">All </button>
+    	</div>
+    	
+    </div>
+</div>
+<div class="column">
+    <div class="container span1" id="graph-container5"></div>
+    <div class="container span2" id="graph-container6"></div>
+    <div class="container span1" style="overflow: auto;"> <br>
+    	<p style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; color:#ffffff;">TOP SCORERS TODAY</p>
+    	<table class="table" style="color:#ffffff; border-color:#C4C4C4;overflow: auto;">
+    		<thead>
+    			<tr>
+    				<th>#</th>
+    				<th>User</th>
+    				<th>Score</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>1</td>
+    				<td>User15</td>
+    				<td>1000</td>
+    			</tr>
+    			<tr>
+    				<td>2</td>
+    				<td>User46</td>
+    				<td>990</td>
+    			</tr>
+    			<tr>
+    				<td>3</td>
+    				<td>User29</td>
+    				<td>980</td>
+    			</tr>
+    		</tbody>
+    	</table>
+    	<p style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; color:#ffffff;">TOP SCORERS OVERALL</p>
+    	<table class="table" style="color:#ffffff; border-color:#C4C4C4;">
+    		<thead>
+    			<tr>
+    				<th>#</th>
+    				<th>User</th>
+    				<th>Score</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>1</td>
+    				<td>User25</td>
+    				<td>1000</td>
+    			</tr>
+    			<tr>
+    				<td>2</td>
+    				<td>User56</td>
+    				<td>990</td>
+    			</tr>
+    			<tr>
+    				<td>3</td>
+    				<td>User39</td>
+    				<td>980</td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+</div>
+
 
 {% endblock %}

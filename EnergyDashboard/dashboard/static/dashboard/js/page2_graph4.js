@@ -61,7 +61,7 @@ $(function () {
             min: 0,
             max: 100,
             title: {
-                text: 'Percentage Consumption'
+                text: 'Percentile Consumption'
             }
         },
 
@@ -75,7 +75,7 @@ $(function () {
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">Percentage</span></div>'
+                       '<span style="font-size:12px;color:silver">Percentile</span></div>'
             },
             tooltip: {
                 valueSuffix: ' %'

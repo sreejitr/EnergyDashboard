@@ -5,6 +5,8 @@ html {
 body {
   color: #2a2a2b;
   background-color: #000000;
+  margin:0;
+  padding:0;
 }
 
 /*.navbar-wrapper {
@@ -181,7 +183,7 @@ p.thick {
   max-width: 920px;
   border-style: solid;
   border-color: #000000;
-  box-shadow: 9px 9px 20px #787878;
+  box-shadow: 9px 9px 20px #000000;
   border-width: 3px;
   background-color: #000000;
   padding-top: 10px;
@@ -220,7 +222,7 @@ p.thick {
   max-width: 450px;
   border-style: solid;
   border-color: #000000;
-  box-shadow: 9px 9px 20px #787878;
+  box-shadow: 9px 9px 20px #000000;
   border-width: 3px;
   background-color: #000000;
   padding-top: 10px;
@@ -230,22 +232,76 @@ p.thick {
 }
 
 #graph-container5 {
-  margin-top: 1em;
-  margin-bottom: 2em;
-  margin-left: 10px;
-  float: left;
-  min-height: 400px;
-  min-width: 400px;
-  max-width: 400px;
-  border-style: solid;
-  border-color: #ffffff;
-  box-shadow: 9px 9px 20px #787878;
-  border-width: 3px;
-  background-color: #ffffff;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 15px;
+  /*margin:0;*/
+  padding:0;
+}
+
+#graph-container6 {
+  /*margin:0;*/
+  padding:0;
+}
+
+#graph-container7 {
+  /*margin:0;*/
+  padding:0;
+}
+
+#graph-container8 {
+  /*margin:0;*/
+  padding:0;
+}
+
+.column .container {
+  float:left;
+  margin:5px;
+  min-width:100px;
+  height:450px;
+  box-shadow: 9px 9px 20px #000000;
+  background:#303030;  
+}
+  .column .container.span1 {
+    width:calc(25% - 10px); 
+    background:#303030;
+  }
+  .column .container.span2 {
+    width:calc(50% - 10px); 
+    background:#303030;
+  }
+  .column .container.span3 {
+    width:calc(75% - 10px); 
+    background:#303030;
+  }
+  .column .container.span4 {
+    width:calc(100% - 10px);
+    background:#303030;  
+  }
+  .band{
+    float:left;
+    margin:5px;
+    width:calc(100% - 10px);
+    height:50px;
+    background:#f45b5b;  
+    text-align: left;
+    line-height: 50px;
+    padding-left: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    box-shadow: 9px 9px 20px #000000;
+  }
+  
+  #topscorer{
+  max-height: 215px;
+  min-height: 215px;
+  display:block;
+  height: 100%;
+  overflow: auto;
+  }
+
+#bargraph3d {
+  height: 400px; 
+  min-width: 310px; 
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #profileinfo-container {

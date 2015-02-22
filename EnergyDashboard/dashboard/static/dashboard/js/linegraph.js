@@ -1,12 +1,12 @@
 $(document).ready(function(){
-$('#button1').click(function () {
-    $('#graph').highcharts({
+// $('#button1').click(function () {
+    $('#graph-container7').highcharts({
         chart: {
             type: 'areaspline',
             zoomType: 'xy'
         },
         title: {
-            text: 'Energy Consumption'
+            text: 'Electricity'
         },
         legend: {
             layout: 'vertical',
@@ -52,12 +52,12 @@ $('#button1').click(function () {
             }
         },
         series: [{
-            name: 'You',
+            name: 'John',
             data: [3, 4, 3, 5, 4, 10, 12]
         }, {
-            name: 'Median',
+            name: 'Jane',
             data: [1, 3, 4, 3, 3, 5, 4]
         }]
     });
-});
+// });
 });

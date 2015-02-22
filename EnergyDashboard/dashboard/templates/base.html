@@ -15,8 +15,9 @@
    <script src="{% static 'dashboard/js/jquery-1.9.1.js' %}"></script>
   
   <link rel="stylesheet" href="{% static 'dashboard/css/result-light.css' %}">
-  <script src="{% static 'dashboard/js/highcharts.js' %}"></script>
+ <script src="{% static 'dashboard/js/highcharts.js' %}"></script>
   <script src="{% static 'dashboard/js/exporting.js' %}"></script>
+
   <script src="{% static 'dashboard/js/dark_theme.js' %}"></script>
   
 
@@ -24,6 +25,8 @@
 {% block stylesheets %}
 <link href="{% static 'dashboard/css/dashboard.css' %}" rel="stylesheet">
 <link href="{% static 'dashboard/css/navbar.css' %}" rel="stylesheet">
+
+
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
@@ -60,11 +63,11 @@
 
    {% block subtitle%} {% endblock %}
 
-   {% block containter %}
+  
    <!-- <div class="col col-md-12" id="profile-container" > -->
     {% block content %}{% endblock %}
    <!-- </div>  -->
-   {% endblock %}
+   
 
   </body>
 </html>
