@@ -13,7 +13,9 @@ $(function () {
         title: {
             text: 'Instantaneous Energy Consumption'
         },
-
+        subtitle: {
+            text: 'Your energy consumption as of 10 minutes ago'
+        },
         pane: {
             startAngle: -150,
             endAngle: 150

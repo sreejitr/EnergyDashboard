@@ -1,4 +1,5 @@
-$(function () {
+$(document).ready(function(){
+$('#percentileall').click(function () {
     $('#graph-container8').highcharts({
         chart: {
             type: 'column',
@@ -13,7 +14,9 @@ $(function () {
         title: {
             text: 'Energy consumption, in Percentile'
         },
-        
+        subtitle: {
+            text: 'Percentile consumption: With respect to all users'
+        },
         plotOptions: {
             column: {
                 depth: 25
@@ -29,20 +32,21 @@ $(function () {
             name: 'Your Overall (%-ile)',
             color: '#f45b5b',
             data: [{
-                y: 69
+                y: 64
             }]
         }, {
             name: 'Median (%-ile)',
             color: "#90ee7e",
             data: [{
-                y: 89
+                y: 92
             }]
         }, {
             name: 'Your highest %-ile',
             color: '#FFFF66',
             data: [{
-                y: 83
+                y: 80
             }]
         }]
     });
+});
 });

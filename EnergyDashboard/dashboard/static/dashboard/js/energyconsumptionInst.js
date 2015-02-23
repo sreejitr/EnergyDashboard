@@ -1,10 +1,13 @@
-$(function () {
+$(document).ready(function(){
+$('#onedaykwh').click(function () {
     $('#graph-container7').highcharts({
         title: {
             text: 'Energy Consumption, KWH',
             x: -20 //center
         },
-        
+        subtitle: {
+            text: 'Total Consumption in Kilo-watt hour at different points in time'
+        },
         xAxis: {
             categories: ['12:00', '12:10', '12:20', '12:30', '12:40', '12:50',
                 '13:00', '13:10', '13:20', '13:30', '13:40', '13:50']
@@ -36,4 +39,5 @@ $(function () {
             data: [82, 88, 97, 113, 170, 220, 248, 271, 261, 251, 266, 250]
         }]
     });
+});
 });

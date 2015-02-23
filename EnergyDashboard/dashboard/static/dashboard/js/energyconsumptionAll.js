@@ -1,5 +1,6 @@
-$(function () {
-    $('#container').highcharts({
+$(document).ready(function(){
+$('#allkwh').click(function () {
+    $('#graph-container7').highcharts({
         title: {
             text: 'Energy Consumption, KWH',
             x: -20 //center
@@ -36,4 +37,5 @@ $(function () {
             data: [182, 188, 97, 113, 170, 220, 248, 271, 261, 251, 266, 250, 200, 220, 190]
         }]
     });
+});
 });
