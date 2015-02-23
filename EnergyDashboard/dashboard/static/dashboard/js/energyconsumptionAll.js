@@ -2,10 +2,12 @@ $(document).ready(function(){
 $('#allkwh').click(function () {
     $('#graph-container7').highcharts({
         title: {
-            text: 'Energy Consumption, KWH',
+            text: 'Energy Consumption, KWH (All days)',
             x: -20 //center
         },
-        
+        subtitle: {
+            text: 'Total Consumption in Kilo-watt hour at different points in time'
+        },
         xAxis: {
             categories: ['1. Mar', '2. Mar', '3. Mar', '4. Mar', '5. Mar', '6. Mar',
                 '7. Mar', '8. Mar', '9. Mar', '10. Mar', '11. Mar', '12. Mar', '13. Mar', '14. Mar', '15. Mar']
@@ -21,7 +23,8 @@ $('#allkwh').click(function () {
             }]
         },
         tooltip: {
-            valueSuffix: 'kwh'
+            valueSuffix: ' kwh',
+            pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
         },
         legend: {
             //layout: 'vertical',

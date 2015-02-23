@@ -1,7 +1,7 @@
 $(function () {
     $('#graph-container7').highcharts({
         title: {
-            text: 'Energy Consumption, KWH',
+            text: 'Energy Consumption, KWH (Today)',
             x: -20 //center
         },
         subtitle: {
@@ -22,7 +22,8 @@ $(function () {
             }]
         },
         tooltip: {
-            valueSuffix: 'kwh'
+            valueSuffix: ' kwh',
+            pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
         },
         legend: {
             //layout: 'vertical',

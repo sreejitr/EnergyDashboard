@@ -12,20 +12,26 @@ $('#percentileweek').click(function () {
             }
         },
         title: {
-            text: 'Energy consumption, in Percentile'
+            text: 'Energy consumption, in Percentile (Last week)'
         },
         subtitle: {
-            text: 'Percentile consumption: With respect to all users'
+            text: 'Percentile of consumption: With respect to all users'
         },
         plotOptions: {
             column: {
                 depth: 25
             }
         },
-        
+        tooltip: {
+            valueSuffix: ' %',
+            pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
+        },
+        xAxis: {
+            categories: ["Percentile Values"]
+        },
         yAxis: {
             title: {
-                text: 'Percentile Consumption'
+                text: null
             }
         },
         series: [{

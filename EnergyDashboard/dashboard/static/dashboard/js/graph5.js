@@ -37,8 +37,8 @@ $(function () {
             minorTickLength: 5,
             endOnTick: false
         }, {
-            min: 0,
-            max: 100,
+            min: 100,
+            max: 0,
             tickPosition: 'outside',
             lineColor: '#933',
             lineWidth: 2,
@@ -61,8 +61,8 @@ $(function () {
             dataLabels: {
                 formatter: function () {
                     var kmh = this.y,
-                        mph = Math.round(kmh * 0.621);
-                    return '<span style="color:#339; font-size:12pt">' + kmh + ' kw/h</span><br/>' +
+                        mph = Math.round(Math.abs(kmh/2 - 100));
+                    return '<span style="color:#339; font-size:12pt">' + kmh + ' kwh</span><br/>' +
                         '<span style="color:#933; font-size:12pt">' + mph + ' %-ile</span>';
                 },
                 backgroundColor: {
@@ -79,7 +79,8 @@ $(function () {
                 }
             },
             tooltip: {
-                valueSuffix: ' kw/h'
+                valueSuffix: ' kwh',
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
             }
         }]
 
@@ -98,7 +99,7 @@ $(function () {
 
                 point.update(newVal);
 
-            }, 3000);
+            }, 10000);
 
         });
 });

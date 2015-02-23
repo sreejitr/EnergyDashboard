@@ -40,7 +40,7 @@ $(function () {
             labelFormatter: function() {
                 var bandmap = {"Band:Red":"Red: Below 75%-ile", "Band:Yellow":"Yellow: 85 to 74%-ile", "Band:Green":"Green: Above 85%-ile"};
                 var range = bandmap[this.name];
-                return '<div style="text-align: left; width:130px;">' + range +'</div>';
+                return '<div style="text-align: left; width:130px; font-size:1.15em;">' + range +'</div>';
    }
         },
         series: [{

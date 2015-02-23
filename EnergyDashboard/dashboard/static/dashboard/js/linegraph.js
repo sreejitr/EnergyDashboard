@@ -1,6 +1,6 @@
 $(document).ready(function(){
 // $('#button1').click(function () {
-    $('#graph-container7').highcharts({
+    $('#graph-container').highcharts({
         chart: {
             type: 'areaspline',
             zoomType: 'xy'

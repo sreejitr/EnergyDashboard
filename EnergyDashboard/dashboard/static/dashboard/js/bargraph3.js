@@ -12,39 +12,45 @@ $('#percentileall').click(function () {
             }
         },
         title: {
-            text: 'Energy consumption, in Percentile'
+            text: 'Energy consumption, in Percentile (All days)'
         },
         subtitle: {
-            text: 'Percentile consumption: With respect to all users'
+            text: 'Percentile of consumption: With respect to all users'
         },
         plotOptions: {
             column: {
                 depth: 25
             }
         },
-        
+        tooltip: {
+            valueSuffix: ' %',
+            pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
+        },
+        xAxis: {
+            categories: ["Percentile Values"]
+        },
         yAxis: {
             title: {
-                text: 'Percentile Consumption'
+                text: null
             }
         },
         series: [{
             name: 'Your Overall (%-ile)',
             color: '#f45b5b',
             data: [{
-                y: 64
+                y: 59
             }]
         }, {
             name: 'Median (%-ile)',
             color: "#90ee7e",
             data: [{
-                y: 92
+                y: 87
             }]
         }, {
             name: 'Your highest %-ile',
             color: '#FFFF66',
             data: [{
-                y: 80
+                y: 75
             }]
         }]
     });
