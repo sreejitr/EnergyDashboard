@@ -1,5 +1,5 @@
 $(document).ready(function(){
-$('#percentileall').click(function () {
+$('#percentileweek').click(function () {
     $('#graph-container8').highcharts({
         chart: {
             type: 'column',
@@ -12,7 +12,7 @@ $('#percentileall').click(function () {
             }
         },
         title: {
-            text: 'Energy Footprint Ranking, in Percentile (Overall): Lowest energy consumed equals 100%-ile'
+            text: 'Cost of Energy Consumed during past week (cents)'
         },
         plotOptions: {
             column: {
@@ -20,35 +20,26 @@ $('#percentileall').click(function () {
             }
         },
         tooltip: {
-            valueSuffix: ' %',
+            valueSuffix: ' cents',
             pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
         },
         xAxis: {
-            categories: ["Percentile Values"]
+            categories: ['Consumption Categories']
         },
         yAxis: {
             title: {
-                text: null
+                text: 'Cost (in Cents)'
             }
         },
         series: [{
-            name: 'Your Overall (%-ile)',
-            color: '#f45b5b',
-            data: [{
-                y: 59
-            }]
-        }, {
-            name: 'Median (%-ile)',
-            color: "#90ee7e",
-            data: [{
-                y: 87
-            }]
-        }, {
-            name: 'Your highest %-ile',
-            color: '#FFFF66',
-            data: [{
-                y: 75
-            }]
+            name: 'Your',
+            data: [75]
+        },{
+            name: 'Median',
+            data: [50]
+        },{
+            name: 'Best Candidate',
+            data: [40]
         }]
     });
 });

@@ -2,15 +2,17 @@ $(document).ready(function(){
 $('#oneweekkwh').click(function () {
     $('#graph-container7').highcharts({
         title: {
-            text: 'Energy Consumption, KWH (Last Week)',
-            x: -20 //center
-        },
-        subtitle: {
-            text: 'Total Consumption in Kilo-watt hour at different points in time'
+            text: 'Total energy Consumption in Kilo-watt hour at different points in time (Last week)'
+            // x: -20 //center
         },
         xAxis: {
             categories: ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri',
-                'Sat']
+                'Sat'],
+                 labels: {
+                style: {
+                    fontSize:'15px'
+                }
+            }
         },
         yAxis: {
             title: {
@@ -20,7 +22,12 @@ $('#oneweekkwh').click(function () {
                 value: 0,
                 width: 1,
                 color: '#808080'
-            }]
+            }],
+            labels: {
+                style: {
+                    fontSize:'15px'
+                }
+            }
         },
         tooltip: {
             valueSuffix: ' kwh',
@@ -30,14 +37,19 @@ $('#oneweekkwh').click(function () {
             //layout: 'vertical',
             //align: 'right',
             //verticalAlign: 'middle',
-            borderWidth: 0
+            borderWidth: 0,
+            itemStyle: {
+                 fontSize:'15px',
+                 font: '15px UNICA ONE, sans-serif',
+                 color: '#A0A0A0'
+              }
         },
         series: [{
             name: 'Median',
-            data: [62, 145, 182, 215, 232, 245, 93]
+            data: [0.62, 1.45, 1.82, 2.15, 2.32, 2.45, 0.93]
         }, {
             name: 'User1\'s consumption',
-            data: [0, 123, 170, 220, 248, 271, 0]
+            data: [0, 1.23, 1.70, 2.20, 2.48, 2.71, 0]
         }]
     });
 });

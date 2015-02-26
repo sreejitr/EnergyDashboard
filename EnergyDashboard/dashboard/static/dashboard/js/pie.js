@@ -10,10 +10,10 @@ $(function () {
             }
         },
         title: {
-            text: 'Band Distribution: High usage-Red, Medium usage-Yellow, Low usage-Green'
+            text: 'Band Distribution: Percentage of users in each Band'
         },
         subtitle: {
-            text: 'Percentage of users in each Band'
+            text: 'Band is determined by comparing individual energy usage to historical average'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -26,7 +26,10 @@ $(function () {
                 showInLegend: true,
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}'
+                    format: '{point.name}',
+                    style: {
+                    fontSize:'15px'
+                    }
                 }
             }
         },
@@ -38,7 +41,7 @@ $(function () {
             width: 200,
             verticalAlign: 'middle',
             labelFormatter: function() {
-                var bandmap = {"Band:Red":"Red: Below 75%-ile", "Band:Yellow":"Yellow: 85 to 74%-ile", "Band:Green":"Green: Above 85%-ile"};
+                var bandmap = {"Band:Red":"Red: High usage", "Band:Yellow":"Yellow: Medium usage", "Band:Green":"Green: Low usage"};
                 var range = bandmap[this.name];
                 return '<div style="text-align: left; width:130px; font-size:1.15em;">' + range +'</div>';
    }

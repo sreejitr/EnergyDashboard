@@ -5,13 +5,14 @@
 <script src="http://code.highcharts.com/highcharts-3d.js"></script>
 <!-- <script src="http://code.highcharts.com/modules/exporting.js"></script> -->
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
-<!-- <script src="http://code.highcharts.com/modules/solid-gauge.js"></script> -->
-<script src="{% static 'dashboard/js/page2_graph1.js' %}"></script>
-<script src="{% static 'dashboard/js/page2_graph2.js' %}"></script>
-<script src="{% static 'dashboard/js/page2_graph3.js' %}"></script>
-<script src="{% static 'dashboard/js/page2_graph4.js' %}"></script>
+<script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+<!-- <script src="{% static 'dashboard/js/page2_graph1.js' %}"></script> -->
+<!-- <script src="{% static 'dashboard/js/page2_graph2.js' %}"></script> -->
+<!-- <script src="{% static 'dashboard/js/page2_graph3.js' %}"></script> -->
+<!-- <script src="{% static 'dashboard/js/page2_graph4.js' %}"></script> -->
 <script src="{% static 'dashboard/js/graph5.js' %}"></script>
 <script src="{% static 'dashboard/js/pie.js' %}"></script>
+<!-- <script src="{% static 'dashboard/js/donut.js' %}"></script> -->
 <script src="{% static 'dashboard/js/energyconsumptionInst.js' %}"></script>
 <script src="{% static 'dashboard/js/energyconsumptionDefault.js' %}"></script>
 <script src="{% static 'dashboard/js/energyconsumptionWeek.js' %}"></script>
@@ -22,35 +23,10 @@
 <script src="{% static 'dashboard/js/bargraphcopy.js' %}"></script>
 <div style="padding-top: 1em; padding-bottom: 1em;">
 
-	<!-- <div id="graph-container1"></div> -->
-<!--div id="graph-container2"></div-->
-	<!--div id="graph-container3">
-		<div id="graph3"></div>
-		<h1 style="text-align: center;">Some Metric</h1>
-		<h2 style="text-align: center;">Value: 300</h2>
-	</div-->
-<!--div id="graph-container4">
-		<h2 style="text-align: center;">WS 'X' Consumption Percentage w.r.t Room</h2>
-		<h2 style="text-align: center;">Instantaneous Variation</h2>
-	<div id="graph4" style="height: 30em;">
-	</div>
-</div-->
-<!-- <table style="margin: 0px auto;">
-	<tr>
-		<td style="width:755px;"><div id="graph-container7"></div></td>
-		<td><div id="graph-container5"></div></td>
-	</tr>
-	<tr>
-		<td><div id="graph-container8"></div></td>
-		<td><div id="graph-container6"></div></td>
-
-	</tr>
-
-</table> -->
 </div>
 <div class="column">
     <div class="band">
-    	<p style="padding-left: 1.0em; font-size: 1.5em; font-family:'UNICA ONE', sans-serif; font-weight: bold;"> BAND: RED <span style="display:block; float:right; width:9em; ">TODAY'S SCORE: 690</span></p>
+        <p style="padding-left: 0.7em; font-size: 1.5em; font-family:'UNICA ONE', sans-serif; font-weight: bold;">USER12,  BAND: RED <span style="display:block; float:right; width:17em; ">TODAY'S SCORE: 690, OVERALL SCORE: 700</span></p>
     </div>
 </div>
 <div class="column">
@@ -63,26 +39,18 @@
     	</div>
     	
     </div>
-    <div class="container span2"> 
-    	<div id="graph-container8"></div>
-    	<div class="btn-group pull-right" id="timeperiod">
-      		<button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="percentileday">Today </button>
-      		<button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="percentileweek">Last Week </button>
-      		<button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="percentileall">All </button>
-    	</div>
-    	
-    </div>
+    <div class="container span2" id="graph-container8"> </div>
 </div>
 <div class="column">
     <div class="container span1" id="graph-container5"></div>
-    <div class="container span2" id="graph-container6"></div>
+    <div class="container span2" style="overflow: auto;" id="graph-container6"></div>
     <div class="container span1" style="overflow: auto;"> <br>
-    	<p style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; color:#ffffff;">TOP SCORES TODAY</p>
-    	<table class="table" style="color:#ffffff; border-color:#C4C4C4;overflow: auto;">
+    	<p style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; color:#ffffff;">TOP SCORES TODAY <sup style="font-family:'UNICA ONE', sans-serif; color:#ffffff; font-size: 0.66em;">**Today's prize: Lunch with Steve Z!</sup></p>
+    	<table class="table" style="color:#ffffff; font-family:'UNICA ONE', sans-serif; border-color:#C4C4C4;overflow: auto;">
     		<thead>
     			<tr>
     				<th>#</th>
-    				<th>User</th>
+    				<th>Username</th>
     				<th>Score</th>
     			</tr>
     		</thead>
@@ -105,11 +73,11 @@
     		</tbody>
     	</table>
     	<p style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; color:#ffffff;">TOP SCORES OVERALL</p>
-    	<table class="table" style="color:#ffffff; border-color:#C4C4C4;">
+    	<table class="table" style="color:#ffffff; font-family:'UNICA ONE', sans-serif; border-color:#C4C4C4;">
     		<thead>
     			<tr>
     				<th>#</th>
-    				<th>User</th>
+    				<th>Username</th>
     				<th>Score</th>
     			</tr>
     		</thead>

@@ -12,11 +12,9 @@ $('#percentileday').click(function () {
             }
         },
         title: {
-            text: 'Energy consumption, in Percentile (Today)'
+            text: 'Energy Footprint Ranking, in Percentile (Today): Lowest energy consumed equals 100%-ile'
         },
-        subtitle: {
-            text: 'Percentile of consumption: With respect to all users'
-        },
+        
         plotOptions: {
             column: {
                 depth: 25

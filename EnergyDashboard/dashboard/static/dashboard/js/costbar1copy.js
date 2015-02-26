@@ -11,7 +11,7 @@ $(function () {
             }
         },
         title: {
-            text: 'Current Average Energy Consumption of users compared with historical average for a particular time window'
+            text: 'Current Average Cost of Energy Consumed by users compared with the historical average cost for a particular time window (cents)'
         },
         plotOptions: {
             column: {
@@ -19,11 +19,11 @@ $(function () {
             }
         },
         tooltip: {
-            valueSuffix: ' kwh',
+            valueSuffix: ' cents',
             pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
         },
         xAxis: {
-            categories: ["Energy consumed in kilo-watt hour"],
+            categories: ['Cost (in cents)'],
             labels: {
                 style: {
                     fontSize:'15px'
@@ -39,7 +39,11 @@ $(function () {
                     fontSize:'15px'
                 }
             }
-        },legend: {
+        },
+        legend: {
+            //layout: 'vertical',
+            //align: 'right',
+            //verticalAlign: 'middle',
             borderWidth: 0,
             itemStyle: {
                  fontSize:'15px',
@@ -47,18 +51,15 @@ $(function () {
                  color: '#A0A0A0'
               }
         },
+
         series: [{
-            name: 'Average energy consumption of users',
+            name: 'Average Cost of energy consumed by all users',
             color: '#009ACD',
-            data: [{
-                y: 1.05
-            }]
-        }, {
-            name: 'Historical average of consumption',
+            data: [15]
+        },{
+            name: 'Historical average cost',
             color: "#9370DB",
-            data: [{
-                y: 0.95
-            }]
+            data: [10]
         }]
     });
 });

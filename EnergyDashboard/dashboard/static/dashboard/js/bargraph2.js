@@ -12,10 +12,7 @@ $('#percentileweek').click(function () {
             }
         },
         title: {
-            text: 'Energy consumption, in Percentile (Last week)'
-        },
-        subtitle: {
-            text: 'Percentile of consumption: With respect to all users'
+            text: 'Energy Footprint Ranking, in Percentile (Last week): Lowest energy consumed equals 100%-ile'
         },
         plotOptions: {
             column: {

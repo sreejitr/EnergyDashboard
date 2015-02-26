@@ -11,11 +11,9 @@ $(function () {
         },
 
         title: {
-            text: 'Instantaneous Energy Consumption'
+            text: 'Instantaneous Energy Consumption, Energy in Watts'
         },
-        subtitle: {
-            text: 'Your energy consumption as of 10 minutes ago'
-        },
+        
         pane: {
             startAngle: -150,
             endAngle: 150
@@ -31,7 +29,10 @@ $(function () {
             lineWidth: 2,
             labels: {
                 distance: -20,
-                rotation: 'auto'
+                rotation: 'auto',
+                style: { 
+                fontSize: '15px'
+                }
             },
             tickLength: 5,
             minorTickLength: 5,
@@ -60,10 +61,9 @@ $(function () {
             data: [80],
             dataLabels: {
                 formatter: function () {
-                    var kmh = this.y,
-                        mph = Math.round(Math.abs(kmh/2 - 100));
-                    return '<span style="color:#339; font-size:12pt">' + kmh + ' kwh</span><br/>' +
-                        '<span style="color:#933; font-size:12pt">' + mph + ' %-ile</span>';
+                    var kmh = this.y;
+                        // mph = Math.round(Math.abs(kmh/2 - 100));
+                    return '<span style="color:#339; font-size:12pt">' + kmh + ' watts</span>';
                 },
                 backgroundColor: {
                     linearGradient: {

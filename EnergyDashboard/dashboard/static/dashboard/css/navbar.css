@@ -251,6 +251,29 @@ p.thick {
   padding:0;
 }
 
+.navlist {
+list-style-type: none;
+margin-left:0px;
+padding-left:0px;
+display: inline-block;
+}
+
+.navlist img
+{
+  height: 40px;
+  width: 40px;
+float:left;
+}
+
+ h5 {
+text-align: right; 
+display:inline-block;
+padding: 0;
+font-size: 1.0em; 
+font-family:'UNICA ONE', sans-serif; 
+font-weight: bold;
+}
+
 .column .container {
   float:left;
   margin:5px;

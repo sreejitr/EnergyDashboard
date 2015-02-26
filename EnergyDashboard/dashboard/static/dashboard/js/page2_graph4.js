@@ -6,8 +6,10 @@ $(function () {
             type: 'solidgauge'
         },
 
-        title: null,
-
+        title: {
+            text: 'Instantaneous Energy Consumption in watts'
+        },
+        
         pane: {
             center: ['50%', '85%'],
             size: '100%',
@@ -56,12 +58,12 @@ $(function () {
     };
 
     // The speed gauge
-    $('#graph4').highcharts(Highcharts.merge(gaugeOptions, {
+    $('#graph-container5').highcharts(Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
             max: 100,
             title: {
-                text: 'Percentile Consumption'
+                text: null
             }
         },
 
@@ -75,10 +77,10 @@ $(function () {
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">Percentile</span></div>'
+                       '<span style="font-size:15px;color:silver">WATTS</span></div>'
             },
             tooltip: {
-                valueSuffix: ' %'
+                valueSuffix: ' th'
             }
         }]
 
@@ -112,7 +114,7 @@ $(function () {
     // Bring life to the dials
     setInterval(function () {
         // Speed
-        var chart = $('#graph4').highcharts(),
+        var chart = $('#graph-container5').highcharts(),
             point,
             newVal,
             inc;
@@ -142,7 +144,7 @@ $(function () {
 
         //     point.update(newVal);
         // }
-    }, 2000);
+    }, 10000);
 
 
 });

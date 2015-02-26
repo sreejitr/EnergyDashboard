@@ -2,15 +2,17 @@ $(document).ready(function(){
 $('#allkwh').click(function () {
     $('#graph-container7').highcharts({
         title: {
-            text: 'Energy Consumption, KWH (All days)',
-            x: -20 //center
-        },
-        subtitle: {
-            text: 'Total Consumption in Kilo-watt hour at different points in time'
+            text: 'Total energy Consumption in Kilo-watt hour at different points in time (All days)'
+            // x: -20 //center
         },
         xAxis: {
             categories: ['1. Mar', '2. Mar', '3. Mar', '4. Mar', '5. Mar', '6. Mar',
-                '7. Mar', '8. Mar', '9. Mar', '10. Mar', '11. Mar', '12. Mar', '13. Mar', '14. Mar', '15. Mar']
+                '7. Mar', '8. Mar', '9. Mar', '10. Mar', '11. Mar', '12. Mar', '13. Mar', '14. Mar', '15. Mar'],
+                labels: {
+                style: {
+                    fontSize:'15px'
+                }
+            }
         },
         yAxis: {
             title: {
@@ -20,7 +22,12 @@ $('#allkwh').click(function () {
                 value: 0,
                 width: 1,
                 color: '#808080'
-            }]
+            }],
+            labels: {
+                style: {
+                    fontSize:'15px'
+                }
+            }
         },
         tooltip: {
             valueSuffix: ' kwh',
@@ -30,14 +37,19 @@ $('#allkwh').click(function () {
             //layout: 'vertical',
             //align: 'right',
             //verticalAlign: 'middle',
-            borderWidth: 0
+            borderWidth: 0,
+            itemStyle: {
+                 fontSize:'15px',
+                 font: '15px UNICA ONE, sans-serif',
+                 color: '#A0A0A0'
+              }
         },
         series: [{
             name: 'Median',
-            data: [170, 169, 95, 145, 182, 215, 232, 245, 233, 243, 239, 240, 220, 212, 170]
+            data: [1.70, 1.69, 0.95, 1.45, 1.82, 2.15, 2.32, 2.45, 2.33, 2.43, 2.39, 2.40, 2.20, 2.12, 1.70]
         }, {
             name: 'User1\'s consumption',
-            data: [182, 188, 97, 113, 170, 220, 248, 271, 261, 251, 266, 250, 200, 220, 190]
+            data: [1.82, 1.88, 0.97, 1.13, 1.70, 2.20, 2.48, 2.71, 2.61, 2.51, 2.66, 2.50, 2.00, 2.20, 1.90]
         }]
     });
 });

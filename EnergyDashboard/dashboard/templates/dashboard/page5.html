@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+<!-- <script src="http://code.highcharts.com/modules/exporting.js"></script> -->
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="{% static 'dashboard/js/page2_graph1.js' %}"></script>
+<script src="{% static 'dashboard/js/page2_graph2.js' %}"></script>
+<script src="{% static 'dashboard/js/page2_graph3.js' %}"></script>
+<!-- <script src="{% static 'dashboard/js/page2_graph4.js' %}"></script> -->
+<script src="{% static 'dashboard/js/graph5.js' %}"></script>
+<script src="{% static 'dashboard/js/piecopy.js' %}"></script>
+<!-- <script src="{% static 'dashboard/js/donut.js' %}"></script> -->
+<script src="{% static 'dashboard/js/energyconsumptionInst.js' %}"></script>
+<script src="{% static 'dashboard/js/energyconsumptionDefault.js' %}"></script>
+<script src="{% static 'dashboard/js/energyconsumptionWeek.js' %}"></script>
+<script src="{% static 'dashboard/js/energyconsumptionAll.js' %}"></script>
+<!-- <script src="{% static 'dashboard/js/costbar1.js' %}"></script> -->
+<!-- <script src="{% static 'dashboard/js/costbar2.js' %}"></script> -->
+<!-- <script src="{% static 'dashboard/js/costbar1copy.js' %}"></script> -->
+<!-- <script src="{% static 'dashboard/js/bargraph1.js' %}"></script> -->
+<!-- <script src="{% static 'dashboard/js/bargraph2.js' %}"></script> -->
+<!-- <script src="{% static 'dashboard/js/bargraph3.js' %}"></script> -->
+<script src="{% static 'dashboard/js/bargraphcopy.js' %}"></script>
+<div style="padding-top: 1em; padding-bottom: 1em;">
+
+</div>
+<div class="column">
+    <div class="band">
+    	<p style="padding-left: 0.7em; font-size: 1.5em; font-family:'UNICA ONE', sans-serif; font-weight: bold;">USER12,  BAND: RED <span style="display:block; float:right; width:17em; ">TODAY'S SCORE: 690, OVERALL SCORE: 700</span></p>
+    </div>
+</div>
+<div class="column">
+    
+    <!-- <div class="container span2" style="overflow: auto;"> -->
+        <div class="container span1" id="graph-container6"></div>
+
+        <div class="container span1" style="background-color:#f45b5b; padding:0; color: #000000; line-height: 450px; height: 450px; text-align: center;">
+            <h4 style="font-size: 1.6em; font-family:'UNICA ONE', sans-serif; font-weight: bold;">Overall Rank</h4> 
+            <h3 style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; font-size: 19em; font-weight: bold;">70<sup style="font-size: 0.3em;">th</sup></h3>
+            <!-- <h5 style="font-size: 1.0em; font-family:'UNICA ONE', sans-serif; font-weight: bold;"> Went up by 5</h5> -->
+            <!-- <img src="{% static 'dashboard/images/tango_go_up.png' %}" alt='My image'/> -->
+                        
+        </div>
+        
+    <!-- </div> -->
+    <div class="container span1" id="graph-container5"></div>
+    <div class="container span1" style="overflow: auto;"> <br>
+        <p style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; color:#ffffff;">TOP SCORES TODAY <sup style="font-family:'UNICA ONE', sans-serif; color:#ffffff; font-size: 0.66em;">**Today's prize: Lunch with Steve Z!</sup></p>
+        <table class="table" style="color:#ffffff; font-family:'UNICA ONE', sans-serif; border-color:#C4C4C4;overflow: auto;">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>User15</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>User46</td>
+                    <td>990</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>User29</td>
+                    <td>980</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; color:#ffffff;">TOP SCORES OVERALL</p>
+        <table class="table" style="color:#ffffff; font-family:'UNICA ONE', sans-serif; border-color:#C4C4C4;">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>User25</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>User56</td>
+                    <td>990</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>User39</td>
+                    <td>980</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+<div class="column">
+    
+    <div class="container span2"> 
+        <div id="graph-container7"></div>
+        <div class="btn-group pull-right" id="timeperiod">
+            <button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="onedaykwh">Today </button>
+            <button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="oneweekkwh">Last Week </button>
+            <button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="allkwh">All </button>
+        </div>
+        
+    </div>
+   <div class="container span2" id="graph-container8"> </div>
+
+</div>
+
+
+{% endblock %}
