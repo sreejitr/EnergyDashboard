@@ -11,7 +11,7 @@ $(function () {
             }
         },
         title: {
-            text: 'Current Average Energy Consumption of users compared with historical average for a particular time window'
+            text: 'Average Energy Consumption of all users compared with User12\'s (Today)'
         },
         plotOptions: {
             column: {
@@ -49,15 +49,15 @@ $(function () {
         },
         series: [{
             name: 'Average energy consumption of users',
-            color: '#009ACD',
-            data: [{
-                y: 1.05
-            }]
-        }, {
-            name: 'Historical average of consumption',
-            color: "#9370DB",
+            color: '#82CFFD',
             data: [{
                 y: 0.95
+            }]
+        }, {
+            name: 'User12\'s Energy Consumption',
+            color: "#03A89E",
+            data: [{
+                y: 1.15
             }]
         }]
     });

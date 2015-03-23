@@ -9,9 +9,10 @@
 <script src="{% static 'dashboard/js/page2_graph1.js' %}"></script>
 <script src="{% static 'dashboard/js/page2_graph2.js' %}"></script>
 <script src="{% static 'dashboard/js/page2_graph3.js' %}"></script>
-<script src="{% static 'dashboard/js/page2_graph4.js' %}"></script>
+<!-- <script src="{% static 'dashboard/js/page2_graph4.js' %}"></script> -->
 <!-- <script src="{% static 'dashboard/js/graph5.js' %}"></script> -->
 <script src="{% static 'dashboard/js/piecopy.js' %}"></script>
+<script src="{% static 'dashboard/js/newgauge.js' %}"></script>
 <!-- <script src="{% static 'dashboard/js/donut.js' %}"></script> -->
 <script src="{% static 'dashboard/js/energyconsumptionInst.js' %}"></script>
 <script src="{% static 'dashboard/js/energyconsumptionDefault.js' %}"></script>
@@ -29,27 +30,32 @@
 </div>
 <div class="column">
     <div class="band">
-    	<p style="padding-left: 0.7em; font-size: 1.5em; font-family:'UNICA ONE', sans-serif; font-weight: bold;">USER12,  BAND: RED <span style="display:block; float:right; width:17em; ">TODAY'S SCORE: 690, OVERALL SCORE: 700</span></p>
+    	<p style="padding-left: 0.7em; font-size: 1.5em; font-family:'UNICA ONE', sans-serif; font-weight: bold;">USER12,  BAND: RED (HIGH USAGE)<span style="display:block; float:right; width:17em; ">TODAY'S SCORE: 690, OVERALL SCORE: 700</span></p>
     </div>
 </div>
 <div class="column">
     
     <!-- <div class="container span2" style="overflow: auto;"> -->
-        <div class="container span1" id="graph-container6"></div>
+        <!-- <div class="container span1" id="graph-container6"></div> -->
 
-        <div class="container span1" style="background-color:#f45b5b; padding:0; color: #000000; line-height: 450px; height: 450px; text-align: center;">
-            <h4 style="font-size: 1.6em; font-family:'UNICA ONE', sans-serif; font-weight: bold;">Overall Rank</h4> 
-            <h3 style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; font-size: 19em; font-weight: bold;">70<sup style="font-size: 0.3em;">th</sup></h3>
-            <!-- <h5 style="font-size: 1.0em; font-family:'UNICA ONE', sans-serif; font-weight: bold;"> Went up by 5</h5> -->
+        <div class="container span1" style="background-color:#303030; padding-left:1em; color: #ffffff; line-height: 550px; height: 550px; text-align: center;">
+            <h4 style="text-align: center; font-size: 4em; font-family:'UNICA ONE', sans-serif; font-weight: bold;">PERFORMANCE (TODAY)</h4>
+            <h4> <br> <br></h4>
+            <h3 style="font-family:'UNICA ONE', sans-serif; font-size: 1.9em;font-weight: bold;">ENERGY CONSUMPTION: 0.55 <span style="font-size: 0.55em; font-family:'UNICA ONE', sans-serif;"> KWH</span></h3>
+            <!-- <h3 style="font-family:'UNICA ONE', sans-serif; font-size: 2.8em;font-weight: bold;">Cummulative: 10.4 <span style="font-size: 0.55em; font-family:'UNICA ONE', sans-serif;"> kwh</span></h3> -->
+            <h3 style="font-family:'UNICA ONE', sans-serif; font-size: 1.9em;font-weight: bold;">BASELINE CONSUMPTION: 0.6 <span style="font-size: 0.55em; font-family:'UNICA ONE', sans-serif;"> KWH</span></h3>
+            <h3 style="font-family:'UNICA ONE', sans-serif; font-size: 1.9em; font-weight: bold;">MONETARY SAVINGS: $4 </h3>
+            <h3 style="font-size: 1.9em; font-family:'UNICA ONE', sans-serif; font-weight: bold;"><br><br>CHANGE IN ENERGY USAGE: +10.6% </h3>
+            <h3 style="font-size: 1.9em; font-family:'UNICA ONE', sans-serif; font-weight: bold;">CHANGE IN SAVINGS: -10.2%</h3>
             <!-- <img src="{% static 'dashboard/images/tango_go_up.png' %}" alt='My image'/> -->
                         
         </div>
         
     <!-- </div> -->
-    <div class="container span1" id="graph-container5"></div>
+    <div class="container span2" id="graph-container5"></div>
     <div class="container span1" style="overflow: auto;"> <br>
         <p style="font-size: 1.5em; font-family:'UNICA ONE', sans-serif; color:#ffffff;">TOP SCORES TODAY <sup style="font-family:'UNICA ONE', sans-serif; color:#ffffff; font-size: 0.66em;">**Today's prize: Lunch with Steve Z!</sup></p>
-        <table class="table" style="color:#ffffff; font-family:'UNICA ONE', sans-serif; border-color:#C4C4C4;overflow: auto;">
+        <table class="table" style="color:#ffffff; font-size: 1em; font-family:'UNICA ONE', sans-serif; border-color:#C4C4C4;overflow: auto;">
             <thead>
                 <tr>
                     <th>#</th>
@@ -72,6 +78,11 @@
                     <td>3</td>
                     <td>User29</td>
                     <td>980</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>User45</td>
+                    <td>970</td>
                 </tr>
             </tbody>
         </table>
@@ -100,6 +111,11 @@
                     <td>User39</td>
                     <td>980</td>
                 </tr>
+                <tr>
+                    <td>4</td>
+                    <td>User45</td>
+                    <td>970</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -107,7 +123,7 @@
 </div>
 <div class="column">
     
-    <div class="container span2"> 
+    <div class="container span2" style="height:450px;"> 
         <div id="graph-container7"></div>
         <div class="btn-group pull-right" id="timeperiod">
             <button type="button" class="btn btn-default" style="background: #7A7A7A; font-weight: bold;" id="onedaykwh">Today </button>
@@ -116,7 +132,7 @@
         </div>
         
     </div>
-   <div class="container span2" id="graph-container8"> </div>
+   <div class="container span2" style="height:450px;" id="graph-container8"> </div>
 
 </div>
 

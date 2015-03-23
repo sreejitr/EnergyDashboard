@@ -2,7 +2,7 @@ $(document).ready(function(){
 $('#oneweekkwh').click(function () {
     $('#graph-container7').highcharts({
         title: {
-            text: 'Total energy Consumption in Kilo-watt hour at different points in time (Last week)'
+            text: 'Energy Consumption in Kilo-watt hour (Last week)'
             // x: -20 //center
         },
         xAxis: {
@@ -48,7 +48,7 @@ $('#oneweekkwh').click(function () {
             name: 'Median',
             data: [0.62, 1.45, 1.82, 2.15, 2.32, 2.45, 0.93]
         }, {
-            name: 'User1\'s consumption',
+            name: 'User12\'s consumption',
             data: [0, 1.23, 1.70, 2.20, 2.48, 2.71, 0]
         }]
     });

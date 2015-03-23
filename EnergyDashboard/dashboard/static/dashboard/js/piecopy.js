@@ -12,9 +12,6 @@ $(function () {
         title: {
             text: 'Band Distribution: Percentage of users in each Band'
         },
-        subtitle: {
-            text: 'Band is determined by comparing individual energy usage to historical average'
-        },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
         },

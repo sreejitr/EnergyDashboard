@@ -2,7 +2,7 @@ $(document).ready(function(){
 $('#allkwh').click(function () {
     $('#graph-container7').highcharts({
         title: {
-            text: 'Total energy Consumption in Kilo-watt hour at different points in time (All days)'
+            text: 'Energy Consumption in Kilo-watt hour (All days)'
             // x: -20 //center
         },
         xAxis: {
@@ -48,7 +48,7 @@ $('#allkwh').click(function () {
             name: 'Median',
             data: [1.70, 1.69, 0.95, 1.45, 1.82, 2.15, 2.32, 2.45, 2.33, 2.43, 2.39, 2.40, 2.20, 2.12, 1.70]
         }, {
-            name: 'User1\'s consumption',
+            name: 'User12\'s consumption',
             data: [1.82, 1.88, 0.97, 1.13, 1.70, 2.20, 2.48, 2.71, 2.61, 2.51, 2.66, 2.50, 2.00, 2.20, 1.90]
         }]
     });

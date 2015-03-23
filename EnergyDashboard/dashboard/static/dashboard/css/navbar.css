@@ -278,7 +278,7 @@ font-weight: bold;
   float:left;
   margin:5px;
   min-width:100px;
-  height:450px;
+  height:550px;
   box-shadow: 9px 9px 20px #000000;
   background:#303030;  
 }
@@ -312,6 +312,8 @@ font-weight: bold;
     box-shadow: 9px 9px 20px #000000;
   }
   
+ 
+
   #topscorer{
   max-height: 215px;
   min-height: 215px;

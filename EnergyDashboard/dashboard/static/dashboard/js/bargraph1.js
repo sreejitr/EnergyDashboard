@@ -1,5 +1,5 @@
 $(document).ready(function(){
-$('#percentileday').click(function () {
+$('#onedayavgkwh').click(function () {
     $('#graph-container8').highcharts({
         chart: {
             type: 'column',
@@ -12,7 +12,7 @@ $('#percentileday').click(function () {
             }
         },
         title: {
-            text: 'Energy Footprint Ranking, in Percentile (Today): Lowest energy consumed equals 100%-ile'
+            text: 'Average Energy Consumption of all users compared with User12\'s (Today)'
         },
         
         plotOptions: {
@@ -21,34 +21,45 @@ $('#percentileday').click(function () {
             }
         },
         tooltip: {
-            valueSuffix: ' %',
+            valueSuffix: ' kwh',
             pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
         },
         xAxis: {
-            categories: ["Percentile Values"]
+            categories: ["Energy consumed in kilo-watt hour"],
+            labels: {
+                style: {
+                    fontSize:'15px'
+                }
+            }
         },
         yAxis: {
             title: {
                 text: null
+            },
+            labels: {
+                style: {
+                    fontSize:'15px'
+                }
             }
+        },legend: {
+            borderWidth: 0,
+            itemStyle: {
+                 fontSize:'15px',
+                 font: '15px UNICA ONE, sans-serif',
+                 color: '#A0A0A0'
+              }
         },
         series: [{
-            name: 'Your Overall (%-ile)',
-            color: '#f45b5b',
+            name: 'Average energy consumption of users',
+            color: '#82CFFD',
             data: [{
-                y: 50
+                y: 0.95
             }]
         }, {
-            name: 'Median (%-ile)',
-            color: "#90ee7e",
+            name: 'User12\'s Energy Consumption',
+            color: "#AAAAFF",
             data: [{
-                y: 95
-            }]
-        }, {
-            name: 'Your highest %-ile',
-            color: '#FFFF66',
-            data: [{
-                y: 80
+                y: 1.15
             }]
         }]
     });

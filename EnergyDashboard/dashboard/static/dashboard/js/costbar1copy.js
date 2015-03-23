@@ -11,7 +11,7 @@ $(function () {
             }
         },
         title: {
-            text: 'Current Average Cost of Energy Consumed by users compared with the historical average cost for a particular time window (cents)'
+            text: 'POWER CONSUMPTION FOR DIFFERENT CHANNELS'
         },
         plotOptions: {
             column: {
@@ -19,11 +19,11 @@ $(function () {
             }
         },
         tooltip: {
-            valueSuffix: ' cents',
+            valueSuffix: ' WATTS',
             pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
         },
         xAxis: {
-            categories: ['Cost (in cents)'],
+            categories: ['Channels'],
             labels: {
                 style: {
                     fontSize:'15px'
@@ -32,7 +32,10 @@ $(function () {
         },
         yAxis: {
             title: {
-                text: null
+                text: 'POWER IN WATTS',
+                style: {
+                    fontSize:'15px'
+                }
             },
             labels: {
                 style: {
@@ -53,13 +56,21 @@ $(function () {
         },
 
         series: [{
-            name: 'Average Cost of energy consumed by all users',
-            color: '#009ACD',
-            data: [15]
+            name: 'Channel 1',
+            color: '#82CFFD',
+            data: [50]
         },{
-            name: 'Historical average cost',
-            color: "#9370DB",
-            data: [10]
+            name: 'Channel 2',
+            color: "#AAAAFF",
+            data: [170]
+        },{
+            name: 'Channel 3',
+            color: "#AAAAAF",
+            data: [80]
+        },{
+            name: 'Channel 4',
+            color: "#e59400",
+            data: [180]
         }]
     });
 });

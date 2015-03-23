@@ -1,7 +1,7 @@
 $(function () {
     $('#graph-container7').highcharts({
         title: {
-            text: 'Total energy Consumption in Kilo-watt hour at different points in time (Today)'
+            text: 'Energy Consumption in Kilo-watt hour (Today)'
             // x: -20 //center
         },
         xAxis: {
@@ -47,7 +47,7 @@ $(function () {
             name: 'Median',
             data: [0.10, 0.09, 0.05, 0.15, 0.2, 0.055, 0.08, 0.07, 0.03, 0.03, 0.039, 0.040]
         }, {
-            name: 'User1\'s consumption',
+            name: 'User12\'s consumption',
             data: [0.12, 0.18, 0.07, 0.03, 0.27, 0.06, 0.18, 0.08, 0.06, 0.051, 0.066, 0.050]
         }]
     });
