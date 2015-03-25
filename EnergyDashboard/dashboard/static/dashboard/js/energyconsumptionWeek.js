@@ -46,9 +46,11 @@ $('#oneweekkwh').click(function () {
         },
         series: [{
             name: 'Median',
+            color: '#FF6600',
             data: [0.62, 1.45, 1.82, 2.15, 2.32, 2.45, 0.93]
         }, {
             name: 'User12\'s consumption',
+            color: "#ADFF2F",
             data: [0, 1.23, 1.70, 2.20, 2.48, 2.71, 0]
         }]
     });

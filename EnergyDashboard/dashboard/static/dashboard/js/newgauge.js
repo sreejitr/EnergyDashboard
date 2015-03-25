@@ -12,6 +12,7 @@ $(function () {
             //spacingRight: 1,
             spacingTop: 25,
             spacingBottom: 25
+            // plotBackgroundImage: 'http://localhost:8000/dashboard/static/dashboard/images/1456233.eps',
         },
 
         title: {
@@ -112,7 +113,7 @@ $(function () {
             title: {
                 text: 'ENERGY CONSUMED DURING PAST HOUR',
                 style: {
-                    fontSize: '19px;'
+                    fontSize: '15px;'
                 }
             },
             plotBands: [{

@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-# admin.autodiscover()
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic.base import TemplateView
 
 
@@ -12,4 +12,7 @@ urlpatterns = patterns('',
 	url(r'^page3/$', 'dashboard.views.page3', name='page3'),
 	url(r'^page4/$', 'dashboard.views.page4', name='page4'),
 	url(r'^page5/$', 'dashboard.views.page5', name='page5'),
+	url(r'^page6/$', 'dashboard.views.page6', name='page6'),
 )
+
+urlpatterns += staticfiles_urlpatterns()

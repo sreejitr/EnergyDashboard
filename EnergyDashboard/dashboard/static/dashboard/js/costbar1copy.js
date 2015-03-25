@@ -9,7 +9,9 @@ $(function () {
                 beta: 25,
                 depth: 70
             }
+            // plotBackgroundImage: 'http://localhost:8000/dashboard/static/dashboard/images/1460361.png',
         },
+
         title: {
             text: 'POWER CONSUMPTION FOR DIFFERENT CHANNELS'
         },
@@ -57,19 +59,19 @@ $(function () {
 
         series: [{
             name: 'Channel 1',
-            color: '#82CFFD',
+            color: '#B2DFEE',
             data: [50]
         },{
             name: 'Channel 2',
-            color: "#AAAAFF",
+            color: "#CDC9C9",
             data: [170]
         },{
             name: 'Channel 3',
-            color: "#AAAAAF",
+            color: "#F4A460",
             data: [80]
         },{
             name: 'Channel 4',
-            color: "#e59400",
+            color: "#BCED91",
             data: [180]
         }]
     });

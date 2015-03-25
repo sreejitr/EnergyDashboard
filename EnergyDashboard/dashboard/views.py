@@ -26,4 +26,9 @@ def page5(request):
 	context = {}
 	return render(request, 'dashboard/page5.html', context)
 
+# page6
+def page6(request):
+	context = {}
+	return render(request, 'dashboard/page6.html', context)
+
 
