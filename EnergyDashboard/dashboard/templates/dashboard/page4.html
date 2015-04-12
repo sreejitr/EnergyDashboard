@@ -14,8 +14,10 @@
 <script src="{% static 'dashboard/js/piecopy.js' %}"></script>
 <script src="{% static 'dashboard/js/newgauge.js' %}"></script>
 <!-- <script src="{% static 'dashboard/js/donut.js' %}"></script> -->
-<script src="{% static 'dashboard/js/energyconsumptionInst.js' %}"></script>
-<script src="{% static 'dashboard/js/energyconsumptionDefault.js' %}"></script>
+<!-- <script src="{% static 'dashboard/js/energyconsumptionInst.js' %}"></script> -->
+<!-- <script src="{% static 'dashboard/js/energyconsumptionDefault.js' %}"></script> -->
+<script src="{% static 'dashboard/js/liveDataEnergyCons.js' %}"></script>
+<script src="{% static 'dashboard/js/liveDataEnergyConToday.js' %}"></script>
 <script src="{% static 'dashboard/js/energyconsumptionWeek.js' %}"></script>
 <script src="{% static 'dashboard/js/energyconsumptionAll.js' %}"></script>
 <script src="{% static 'dashboard/js/costbar1.js' %}"></script>
@@ -26,6 +28,43 @@
 <!-- <script src="{% static 'dashboard/js/bargraph2.js' %}"></script> -->
 <!-- <script src="{% static 'dashboard/js/bargraph3.js' %}"></script> -->
 <!-- <script src="{% static 'dashboard/js/bargraphcopy.js' %}"></script> -->
+
+<script type="text/javascript">
+$(function(){
+    $("#buildingconsumptiondiv").hide();
+});
+$( document ).ready(function() {
+    $('#buildingconsbutton').on('click', function(){
+        $("#feedbackdiv").hide();
+        $("#buildingconsumptiondiv").show();
+    });
+    $('#feedbackbutton').on('click', function(){
+        $("#buildingconsumptiondiv").hide();
+        $("#feedbackdiv").show();
+    });
+   $('#myForm input').on('change', function() { 
+   var value = $('input[name="myRadio"]:checked', '#myForm').val(); 
+   var now = new Date();
+   var date = [ now.getMonth() + 1, now.getDate(), now.getFullYear() ];
+   var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
+   var suffix = ( time[0] < 12 ) ? "AM" : "PM";
+   time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
+   time[0] = time[0] || 12;
+   for ( var i = 1; i < 3; i++ ) {
+    if ( time[i] < 10 ) {
+      time[i] = "0" + time[i];
+    }
+  }
+   var timestamp = date.join("/") + " " + time.join(":") + " " + suffix;
+   var txt = $("<h3></h3>").text("USER12: " + value);
+   var txt2 = $("<p></p>").text("Timestamp: " + timestamp);
+    $("#feedbackcontainer").append(txt, txt2, "<hr>");
+    $("#feedbackcontainer h3").css({'text-align': 'center', "position": "relative", "font-family": "CENTURY GOTHIC, sans-serif", "font-size": '1.2em', "color": 'cyan', 'top':'0'});
+    $("#feedbackcontainer p").css({'text-align': 'center', 'position': 'relative', 'font-family': 'CENTURY GOTHIC, sans-serif', 'color': '#aaa', 'top':'7px'});
+    $('#feedbackcontainer').animate({"scrollTop": $('#feedbackcontainer')[0].scrollHeight}, "fast");
+});});
+</script>
+
 <div style="padding-top: 1em; padding-bottom: 1em;">
 
 </div>
@@ -50,16 +89,50 @@
             <h3 style="font-size: 1.9em; font-family:'UNICA ONE', sans-serif; font-weight: bold;">CHANGE IN SAVINGS: -10.2%</h3>
             <!- <img src="{% static 'dashboard/images/tango_go_up.png' %}" alt='My image'/> --> 
         <div class="container span1" >  
-            <div style="padding-top:1em;" id="graph-container10"> </div>
-            <div class="container span1" style="padding-left:0em; color: #FF6600; max-height:130px; width:260px; text-align: left; box-shadow: 0px 0px 0px #000000;"> <h5 style="font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.3em;">SOLAR: 10,000 KW </h5><br>
-            <h5 style="font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.3em;">FUEL CELLS: 10,000 KW </h5>
-            <h5 style="font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.3em;">BUILDING LOAD: 10,000 KW </h5></div>           
-        </div>
+              
+            <div class="container span5" id = "feedbackdiv"> 
+                <div class="box effect7" id="feedbackcontainer">
+                    <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER19: Comfortable </h3> 
+                    <p style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; color: #aaa; top:7px;">Timestamp: 4/7/2015 10:56:30 AM</p>
+                    <hr>
+                    <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER42: Cold </h3> 
+                    <p style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; color: #aaa; top:7px;">Timestamp: 4/7/2015 10:57:40 AM</p>
+                    <hr>
+                    <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER27: Comfortable </h3> 
+                    <p style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; color: #aaa; top:7px;">Timestamp: 4/7/2015 10:58:38 AM</p>
+                    <hr>
+                    <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER38: Hot </h3> 
+                    <p style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; color: #aaa; top:7px;">Timestamp: 4/7/2015 10:59:10 AM</p>
+                    <hr>
+                </div>
+
+                <form id="myForm" style="color:#7FFF00; margin: 0; padding:0px; font-size: 1.2em; font-family:'CENTURY GOTHIC', sans-serif;">
+                    <br>How do you feel? <br>
+                    <input type="radio" name="myRadio" value="Hot" /> Hot
+                    <input type="radio" name="myRadio" value="Comfortable" /> Comfortable 
+                    <input type="radio" name="myRadio" value="Cold" /> Cold
+                </form>
+            <!-- </div> -->
+            </div>
+            <!-- <div class="btn-group" style="font-family: 'Century Gothic';"> -->
+
         
-    <!-- </div> -->
+
+        <div class="container span5" id = "buildingconsumptiondiv"> 
+        <div style="padding-top:1em;" id="graph-container10"> </div>
+            <div class="container span1" style="padding-left:0em; color: cyan; max-height:120px; width:260px; text-align: center; box-shadow: 0px 0px 0px #000000;"> 
+                <h5 style="font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.0em;">SOLAR: 10,000 KW <br>FUEL CELLS: 10,000 KW <br> BUILDING LOAD: 10,000 KW </h5>
+            </div>  
+        
+        </div>
+        <div class="btn-group pull-right" style="margin-top:47px; padding-right:30px; font-family: 'Century Gothic';">
+            <button type="button" class="btn btn-default" style="background: #ffffff; font-weight: bold;" id="feedbackbutton">Feedback </button>
+            <button type="button" class="btn btn-default" style="background: #ffffff; font-weight: bold;" id="buildingconsbutton">Building Stats</button>
+        </div>
+        </div>
     <div class="container span2" id="graph-container5"></div>
     <div class="container span1" style="overflow: auto;"> <br>
-        <p style="font-size: 1.5em; font-family:'CENTURY GOTHIC', sans-serif; color:#ffffff;">TOP SCORES TODAY <sup style="font-family:'CENTURY GOTHIC', sans-serif; color:#ffffff; font-size: 0.66em;">**Today's prize: Free Parking!</sup></p>
+        <p style="font-size: 1.5em; font-family:'CENTURY GOTHIC', sans-serif; color:#aaa;">TOP SCORES TODAY <sup style="font-family:'CENTURY GOTHIC', sans-serif; color:#7FFF00; font-size: 0.66em;">**Today's prize: Free Parking!</sup></p>
         <table class="table" style="color:#00FFFF; font-size: 1em; font-family:'CENTURY GOTHIC', sans-serif; border-color:#C4C4C4;overflow: auto;">
             <thead>
                 <tr>
@@ -91,7 +164,7 @@
                 </tr>
             </tbody>
         </table>
-        <p style="font-size: 1.5em; font-family:'CENTURY GOTHIC', sans-serif; color:#ffffff;">TOP SCORES OVERALL</p>
+        <p style="font-size: 1.5em; font-family:'CENTURY GOTHIC', sans-serif; color:#aaa;">TOP SCORES OVERALL</p>
         <table class="table" style="color:#00FFFF; font-family:'CENTURY GOTHIC', sans-serif; border-color:#C4C4C4;">
             <thead>
                 <tr>

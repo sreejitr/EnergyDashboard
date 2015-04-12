@@ -5,13 +5,16 @@ $(function () {
             spacingBottom: 30
         },
         title: {
-            text: 'BUILDING POWER CONSUMPTION IN KILO-WATT HOUR'
+            text: 'BUILDING POWER CONSUMPTION IN KILO-WATT HOUR',
+            style: {
+                color: '#aaaaaa'
+            }
         },
         legend: {
             layout: 'vertical',
             align: 'left',
             verticalAlign: 'top',
-            x: 90,
+            x: 60,
             y: 100,
             floating: true,
             borderWidth: 1,

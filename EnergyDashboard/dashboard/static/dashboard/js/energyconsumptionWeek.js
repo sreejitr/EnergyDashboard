@@ -2,8 +2,10 @@ $(document).ready(function(){
 $('#oneweekkwh').click(function () {
     $('#graph-container7').highcharts({
         title: {
-            text: 'Energy Consumption in Kilo-watt hour (Last week)'
-            // x: -20 //center
+            text: 'Energy Consumption in Kilo-watt hour (Last week)',
+            style: {
+                    color: '#aaaaaa'
+            }
         },
         xAxis: {
             categories: ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri',

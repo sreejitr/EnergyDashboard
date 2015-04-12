@@ -13,7 +13,10 @@ $(function () {
         },
 
         title: {
-            text: 'POWER CONSUMPTION FOR DIFFERENT CHANNELS'
+            text: 'POWER CONSUMPTION FOR DIFFERENT CHANNELS',
+            style: {
+                    color: '#aaaaaa'
+            }
         },
         plotOptions: {
             column: {

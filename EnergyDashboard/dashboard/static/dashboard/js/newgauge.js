@@ -111,7 +111,7 @@ $(function () {
                 }
             },
             title: {
-                text: 'ENERGY CONSUMED DURING PAST HOUR',
+                text: 'ENERGY CONSUMED LAST MINUTE',
                 style: {
                     fontSize: '15px;'
                 }
@@ -136,11 +136,11 @@ $(function () {
             data: [140],
             dataLabels: {
 	            formatter: function () {
-                    return '<p style="color:#FFFFF; font-size:12px; text-align:center;">'+ this.y + ' Watt-Hour</p>';
+                    return '<p style="color:#FFFFF; font-size:12px; text-align:center;">'+ this.y + ' Watts</p>';
 	            }
             },
             tooltip: {
-                valueSuffix: ' WATT-HOUR',
+                valueSuffix: ' WATTS',
                 pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
             }
         }]

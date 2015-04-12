@@ -2,8 +2,10 @@ $(document).ready(function(){
 $('#allkwh').click(function () {
     $('#graph-container7').highcharts({
         title: {
-            text: 'Energy Consumption in Kilo-watt hour (All days)'
-            // x: -20 //center
+            text: 'Energy Consumption in Kilo-watt hour (All days)',
+            style: {
+                    color: '#aaaaaa'
+            }
         },
         xAxis: {
             categories: ['1. Mar', '2. Mar', '3. Mar', '4. Mar', '5. Mar', '6. Mar',
