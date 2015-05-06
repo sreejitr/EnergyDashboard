@@ -2,10 +2,13 @@
 {% load staticfiles %}
 {% block content %}
 <!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
-<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+<!-- <script src="http://code.highcharts.com/highcharts-3d.js"></script> -->
 <!-- <script src="http://code.highcharts.com/modules/exporting.js"></script> -->
-<script src="http://code.highcharts.com/highcharts-more.js"></script>
-<script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+<!-- <script src="http://code.highcharts.com/highcharts-more.js"></script> -->
+<!-- <script src="http://code.highcharts.com/modules/solid-gauge.js"></script> -->
+<script src="{% static 'dashboard/js/highcharts-3d.js' %}"></script>
+<script src="{% static 'dashboard/js/highcharts-more.js' %}"></script>
+<script src="{% static 'dashboard/js/highcharts-solidgauge.js' %}"></script>
 <script src="{% static 'dashboard/js/page2_graph1.js' %}"></script>
 <script src="{% static 'dashboard/js/page2_graph2.js' %}"></script>
 <script src="{% static 'dashboard/js/page2_graph3.js' %}"></script>
@@ -92,13 +95,13 @@ $( document ).ready(function() {
               
             <div class="container span5" id = "feedbackdiv"> 
                 <div class="box effect7" id="feedbackcontainer">
-                    <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER19: Comfortable </h3> 
+                    <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER19: Just right </h3> 
                     <p style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; color: #aaa; top:7px;">Timestamp: 4/7/2015 10:56:30 AM</p>
                     <hr>
                     <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER42: Cold </h3> 
                     <p style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; color: #aaa; top:7px;">Timestamp: 4/7/2015 10:57:40 AM</p>
                     <hr>
-                    <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER27: Comfortable </h3> 
+                    <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER27: Just right </h3> 
                     <p style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; color: #aaa; top:7px;">Timestamp: 4/7/2015 10:58:38 AM</p>
                     <hr>
                     <h3 style="text-align:center; position:relative; font-family:'CENTURY GOTHIC', sans-serif; font-size: 1.2em; color:cyan; top:10px;">USER38: Hot </h3> 
@@ -109,7 +112,7 @@ $( document ).ready(function() {
                 <form id="myForm" style="color:#7FFF00; margin: 0; padding:0px; font-size: 1.2em; font-family:'CENTURY GOTHIC', sans-serif;">
                     <br>How do you feel? <br>
                     <input type="radio" name="myRadio" value="Hot" /> Hot
-                    <input type="radio" name="myRadio" value="Comfortable" /> Comfortable 
+                    <input type="radio" name="myRadio" value="Just right" /> Just right 
                     <input type="radio" name="myRadio" value="Cold" /> Cold
                 </form>
             <!-- </div> -->

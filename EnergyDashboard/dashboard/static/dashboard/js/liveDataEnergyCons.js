@@ -28,7 +28,7 @@ $(function () {
                 }
             },
             title: {
-                text: 'ENERGY CONSUMPTION IN KILO-WATTS',
+                text: 'ENERGY CONSUMPTION IN KILO-WATT HOUR',
                 style: {
                     color: '#aaaaaa'
                 }
@@ -39,7 +39,7 @@ $(function () {
             },
             yAxis: {
                 title: {
-                    text: 'Energy (Kilo-Watts)'
+                    text: 'Energy (Kilo-Watt Hour)'
                 },
                 plotLines: [{
                     value: 0,

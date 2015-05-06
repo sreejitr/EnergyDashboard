@@ -136,11 +136,11 @@ $(function () {
             data: [140],
             dataLabels: {
 	            formatter: function () {
-                    return '<p style="color:#FFFFF; font-size:12px; text-align:center;">'+ this.y + ' Watts</p>';
+                    return '<p style="color:#FFFFF; font-size:12px; text-align:center;">'+ this.y + ' Kilo-Watt Hour</p>';
 	            }
             },
             tooltip: {
-                valueSuffix: ' WATTS',
+                valueSuffix: ' KILO-WATT HOUR',
                 pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
             }
         }]
