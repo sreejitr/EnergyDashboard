@@ -42,7 +42,7 @@ PRIMARY KEY ("room_id")
 
 CREATE TABLE "FLOOR" (
 "floor_id" serial4 NOT NULL,
-"floor_number" int4,
+"floor_number" int4 NOT NULL,
 "description" varchar(255),
 PRIMARY KEY ("floor_id") 
 );
@@ -91,7 +91,7 @@ PRIMARY KEY ("channel_id")
 );
 
 CREATE TABLE "CHANNEL_PROFILE" (
-"channel_profile_id" serial4,
+"channel_profile_id" serial4 NOT NULL,
 "description" varchar(255),
 "name" varchar(255),
 "metadata_url" varchar(500),
@@ -100,8 +100,8 @@ PRIMARY KEY ("channel_profile_id")
 );
 
 CREATE TABLE "CHANNEL_PLUG_LOAD" (
-"plug_load_id" serial4,
-"channel_id" int4,
+"plug_load_id" serial4 NOT NULL,
+"channel_id" int4 NOT NULL,
 "power" float4,
 "status" int4,
 "timestamp" timestamp,
