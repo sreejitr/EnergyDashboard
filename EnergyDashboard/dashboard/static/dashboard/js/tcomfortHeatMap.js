@@ -47,16 +47,16 @@ $('#comfMap').click(function () {
             // maxColor: '#ff3232',
             dataClasses: [{
                             from: 50,
-                            to: 57.5,
+                            to: 57.49,
                             color: '#00BFFF',
                             name: 'Cold'
                         }, {
-                            from: 57.6,
-                            to: 72.5,
+                            from: 57.5,
+                            to: 72.49,
                             color: '#93DB70',
                             name: 'Just Right'
                         }, {
-                            from: 72.6,
+                            from: 72.5,
                             to: 80,
                             color: '#FF6A6A',
                             name: 'Hot'
