@@ -1,5 +1,5 @@
 CREATE TABLE "USER" (
-"user_id" varchar(255),
+"user_id" varchar(255) NOT NULL,
 "password" varchar(255) NOT NULL,
 "node_id" int4,
 "cubicle_id" int4,
@@ -7,8 +7,8 @@ PRIMARY KEY ("user_id")
 );
 
 CREATE TABLE "NODE" (
-"node_id" serial4,
-"node_profile_id" int4 NOT NULL,
+"node_id" serial4 NOT NULL,
+"node_profile_id" int4,
 "mac_addr" macaddr,
 "bridge_mac_addr" macaddr,
 "state" varchar(255),
@@ -22,8 +22,8 @@ PRIMARY KEY ("node_id")
 );
 
 CREATE TABLE "CUBICLE" (
-"cubible_id" serial4,
-"room_id" varchar(255) NOT NULL,
+"cubible_id" serial4 NOT NULL,
+"room_id" varchar(255),
 "cubicle_number" int4,
 "node_id" int4,
 "description" varchar(255),
@@ -31,9 +31,9 @@ PRIMARY KEY ("cubible_id")
 );
 
 CREATE TABLE "ROOM" (
-"room_id" serial4,
-"room_number" int4 NOT NULL,
-"floor_id" int4 NOT NULL,
+"room_id" serial4 NOT NULL,
+"room_number" int4,
+"floor_id" int4,
 "wing_id" int4,
 "description" varchar(255),
 "type_id" int4,
@@ -41,34 +41,34 @@ PRIMARY KEY ("room_id")
 );
 
 CREATE TABLE "FLOOR" (
-"floor_id" serial4,
-"floor_number" int4 NOT NULL,
+"floor_id" serial4 NOT NULL,
+"floor_number" int4,
 "description" varchar(255),
 PRIMARY KEY ("floor_id") 
 );
 
 CREATE TABLE "LOCATION" (
-"location_id" serial4,
+"location_id" serial4 NOT NULL,
 "location" point,
 "floor_id" int4,
 PRIMARY KEY ("location_id") 
 );
 
 CREATE TABLE "ROOM_TYPE" (
-"type_id" serial4,
+"type_id" serial4 NOT NULL,
 "description" varchar(255),
 PRIMARY KEY ("type_id") 
 );
 
 CREATE TABLE "WING" (
-"wing_id" serial4,
+"wing_id" serial4 NOT NULL,
 "name" varchar(255),
 "description" varchar(255),
 PRIMARY KEY ("wing_id") 
 );
 
 CREATE TABLE "NODE_PROFILE" (
-"node_profile_id" serial4,
+"node_profile_id" serial4 NOT NULL,
 "node_name" varchar(255),
 "metadata_url" varchar(500),
 "num_of_channels" int4,
@@ -79,7 +79,7 @@ PRIMARY KEY ("node_profile_id")
 
 CREATE TABLE "CHANNEL" (
 "channel_profile_id" int4 NOT NULL,
-"channel_id" serial4,
+"channel_id" serial4 NOT NULL,
 "node_id" int4 NOT NULL,
 "enabled" varchar(255),
 "sensor_num" int4,
@@ -101,7 +101,7 @@ PRIMARY KEY ("channel_profile_id")
 
 CREATE TABLE "CHANNEL_PLUG_LOAD" (
 "plug_load_id" serial4,
-"channel_id" int4 NOT NULL,
+"channel_id" int4,
 "power" float4,
 "status" int4,
 "timestamp" timestamp,
@@ -126,4 +126,5 @@ ALTER TABLE "NODE" ADD CONSTRAINT "fk_NODE_NODE_1" FOREIGN KEY ("node_profile_id
 ALTER TABLE "CHANNEL" ADD CONSTRAINT "fk_CHANNEL_CHANNEL_1" FOREIGN KEY ("channel_profile_id") REFERENCES "CHANNEL_PROFILE" ("channel_profile_id");
 ALTER TABLE "CHANNEL" ADD CONSTRAINT "fk_CHANNEL_CHANNEL_2" FOREIGN KEY ("node_id") REFERENCES "NODE" ("node_id");
 ALTER TABLE "CHANNEL_PLUG_LOAD" ADD CONSTRAINT "fk_CHANNEL_PLUG_LOAD_CHANNEL_PLUG_LOAD_1" FOREIGN KEY ("channel_id") REFERENCES "CHANNEL" ("channel_id");
+ALTER TABLE "CUBICLE" ADD CONSTRAINT "fk_CUBICLE_CUBICLE_2" FOREIGN KEY ("node_id") REFERENCES "NODE" ("node_id");
 
