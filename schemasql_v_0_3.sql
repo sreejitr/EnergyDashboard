@@ -5,7 +5,7 @@ CREATE TABLE "locations" (
 PRIMARY KEY ("location_id") 
 );
 
-SELECT AddGeometryColumn('locations', 'location', -1, 'LINESTRING', 2);
+SELECT AddGeometryColumn('locations', 'location', 0, 'LINESTRING', 2);
 
 CREATE TABLE "nodes" (
 "node_id" serial4,
