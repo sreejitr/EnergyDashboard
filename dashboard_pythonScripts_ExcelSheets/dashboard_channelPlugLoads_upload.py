@@ -20,7 +20,12 @@ def main():
 	for i in range(length_rows_channel_plug_loads): 
 		if i > 0:
 			acol = [channel_plug_loads_sheet.row_values(i)[j] for j in range(channel_plug_loads_sheet.ncols) if channel_plug_loads_sheet.row_values(i)[j]]
-			acol[4] = datetime.datetime.strptime(acol[4], "%m/%d/%Y %H:%M:%S %p")
+			if i >= 4081:
+				time_st = "6/21/2014 " + acol[4][11:19]
+			else:
+				time_st = "6/20/2014 " + acol[4][11:19]
+			
+			acol[4] = datetime.datetime.strptime(time_st, "%m/%d/%Y %H:%M:%S")
 			print acol
 			cur.execute("INSERT INTO sb_dash.channel_plug_loads (node_id,channel_id,power,status,time_stamp,voltage,current,frequency,power_factor,sample_interval) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (acol[0], acol[1], acol[2], acol[3], acol[4], acol[5], acol[6], acol[7], acol[8], acol[9]));
 

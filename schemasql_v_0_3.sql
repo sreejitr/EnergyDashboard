@@ -1,6 +1,8 @@
+﻿DROP SCHEMA IF EXISTS sb_dash CASCADE;
+
 CREATE SCHEMA sb_dash;
 
-SET search_path = "$user",sb_dash;
+SET search_path = sb_dash, public;
 
 CREATE OR REPLACE FUNCTION sb_dash.generate_random_password() RETURNS text
 AS $$
